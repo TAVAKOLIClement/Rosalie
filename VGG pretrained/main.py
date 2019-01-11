@@ -79,7 +79,7 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, NUMBER_OF_CLASSES):
     layer3, layer4, layer7 = vgg_layer3_out, vgg_layer4_out, vgg_layer7_out
 
     # Apply 1x1 convolution in place of fully connected layer
-    fcn8 = tf.layers.conv2d(layer7, filters=NUMBER_OF_CLASSES, kernel_size=4, name="fcn8")
+    fcn8 = tf.layers.conv2d(layer7, filters=NUMBER_OF_CLASSES, kernel_size=1, name="fcn8")
 
     # Upsample fcn8 with size depth=(4096?) to match size of layer 4 so that we can add skip connection with 4th layer
     fcn9 = tf.layers.conv2d_transpose(fcn8, filters=layer4.get_shape().as_list()[-1],
