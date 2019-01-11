@@ -17,3 +17,6 @@ Run the following command to run the project:
 ```
 python main.py
 ```
+It will automatically detect your GPU (please use the tensorflow-gpu package)
+
+The pretrained model will be automatically downloaded and extracted if missing.
